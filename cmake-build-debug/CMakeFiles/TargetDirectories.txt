@@ -1,0 +1,3 @@
+C:/Users/belfo/OneDrive/Área de Trabalho/PAA-tp1/PAA-TP1/cmake-build-debug/CMakeFiles/PAA_TP1.dir
+C:/Users/belfo/OneDrive/Área de Trabalho/PAA-tp1/PAA-TP1/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/belfo/OneDrive/Área de Trabalho/PAA-tp1/PAA-TP1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
