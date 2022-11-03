@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/belfo/CLionProjects/untitled/cmake-build-debug"
+			"value" : "c:/Users/belfo/OneDrive/\u00c1rea de Trabalho/PAA-tp1/PAA-TP1/src/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -479,7 +479,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/belfo/CLionProjects/untitled"
+			"value" : "C:/Users/belfo/OneDrive/\u00c1rea de Trabalho/PAA-tp1/PAA-TP1/src"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1095,7 +1095,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/belfo/CLionProjects/untitled/cmake-build-debug"
+			"value" : "C:/Users/belfo/OneDrive/\u00c1rea de Trabalho/PAA-tp1/PAA-TP1/src/cmake-build-debug"
 		},
 		{
 			"name" : "untitled_IS_TOP_LEVEL",
@@ -1119,7 +1119,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/belfo/CLionProjects/untitled"
+			"value" : "C:/Users/belfo/OneDrive/\u00c1rea de Trabalho/PAA-tp1/PAA-TP1/src"
 		}
 	],
 	"kind" : "cache",

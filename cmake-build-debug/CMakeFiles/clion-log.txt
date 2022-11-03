@@ -1,4 +1,1 @@
-C:\Users\belfo\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\222.4345.21\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Users/belfo/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/bin/ninja/win/ninja.exe -G Ninja -S "C:\Users\belfo\OneDrive\Área de Trabalho\PAA-tp1\PAA-TP1" -B "C:\Users\belfo\OneDrive\Área de Trabalho\PAA-tp1\PAA-TP1\cmake-build-debug"
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/belfo/OneDrive/Área de Trabalho/PAA-tp1/PAA-TP1/cmake-build-debug
+CMakeLists.txt not found in C:\Users\belfo\OneDrive\Área de Trabalho\PAA-tp1\PAA-TP1 Select CMakeLists.txt

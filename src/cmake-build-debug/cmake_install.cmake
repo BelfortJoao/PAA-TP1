@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/belfo/CLionProjects/untitled
+# Install script for directory: C:/Users/belfo/OneDrive/Área de Trabalho/PAA-tp1/PAA-TP1/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/belfo/CLionProjects/untitled/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/belfo/OneDrive/Área de Trabalho/PAA-tp1/PAA-TP1/src/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
