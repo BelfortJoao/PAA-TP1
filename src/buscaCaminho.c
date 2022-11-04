@@ -18,11 +18,7 @@
 //output:
 //  int TRUE/FALSE: 0 se o par do número com o passo atual são invalidos e 1 se são validos.
 int testeDePasso(int passo, int numero) {
-    if (fibonacci(getRealPossitionInFibonacci(passo)) == numero) {
-        return TRUE;
-    } else {
-        return FALSE;
-    }
+    return (fibonacci(getRealPossitionInFibonacci(passo)) == numero)
 }
 
 //testa se a casa é segura para se dar o proximo passo ou se é invalida
@@ -33,15 +29,19 @@ int testeDePasso(int passo, int numero) {
 //  int y: posição y atual do passo.
 //output:
 //  int True/False: 1 se é uma casa valida dentro dos limites e regras do passo
-int casaSegura(int passo, int matriz[N][N], int x, int y) {
-    return x >= 0 && x < N && y >= 0 && y < N && testeDePasso(passo, matriz[x][y]) && matriz[x][y] > 0;
+int casaSegura(int passo, matriz mat, int x, int y) {
+    if (coordValida(x, y, mat)){
+        return testeDePasso(passo, mat.matriz[x][y]);
+    } else {
+        return 0;
+    }
 }
 
 //imprime o vetor de solução para a matriz
 //input:
 //  int sol[N2]: vetor de soluções para a matriz
-void printSolution(int sol[N2]) {
-    for (int y = 0; y < N2; y += 2) {
+void printSolution(matriz matriz) {
+    for (int y = 0; y < sizeof(matriz.sol); y += 2) {
         if (sol[y] != -1) {
             printf(" %d %d\n", sol[y], sol[y + 1]);
         } else {
@@ -53,18 +53,15 @@ void printSolution(int sol[N2]) {
 //Função principal de busca de caminhos na matriz
 //input:
 //  int matriz[N][N]: matriz original que representa a fazenda .
-void buscaCaminho(int M[N][N]){
-    int sol[N2];
-    for (int i = 0; i < N2; ++i) {
-        sol[i]=-1;
-    }
+void buscaCaminho(matriz matriz){
+    resetSol(matriz.sol)
     int x,y;
     int xMove[4] = {0,1, 0, -1};
     int yMove[4] = {1,0,-1, 0};
     int moves=0;
     int recursividade=0;
-    for(int f = 0; f < N; ++f) {
-            int resolucao=Resolva(f,0,moves, recursividade, sol, M, xMove, yMove);
+    for(int f = 0; f < mat.largura; f++) {
+            int resolucao=Resolva(f,0,moves, recursividade, &matriz, matriz.matriz, xMove, yMove);
             if (resolucao == 1) {
                 printSolution(sol);
                 printf("\nQuantidade de recursões %d", recursividade);
@@ -85,20 +82,20 @@ void buscaCaminho(int M[N][N]){
 //  int yMove: the possible moves for y
 //output:
 //  TRUE/FALSE: 0 if it cant find a solution for that position in the array, and 1 if it can
-int Resolva(int  x,int y, int moves, int recursividade, int  sol[N2],int  M[N][N],int  xMove[4],int yMove[4]){
+int Resolva(int  x,int y, int moves, int recursividade, matriz* matriz,int**  M,int  xMove[4],int yMove[4]){
     int k, next_x, next_y;
     recursividade++;
     moves+=2;
-    if ((int)moves/2==N2){
+    if ((int)moves/2 == sizeof(matriz->sol)){
         return 1;
     }
     for (k = 0; k < 4; k++) {
         next_x = x + xMove[k];
         next_y = y + yMove[k];
         if (casaSegura((int) moves / 2, M, next_x, next_y)) {
-            sol[moves - 1] = next_x;
-            sol[moves] = next_y;
-            if (Resolva(next_x, next_y, (int) moves / 2, recursividade, sol, M, xMove, yMove)
+            matriz->sol[moves - 1] = next_x;
+            matriz->sol[moves] = next_y;
+            if (Resolva(next_x, next_y, (int) moves / 2, recursividade, matriz, M, xMove, yMove)
                 == 1)
                 return 1;
             else {
