@@ -1,5 +1,5 @@
 # ninja log v5
-3	1283	6891211908373826	build.ninja	e9aaae1fcefe0cbe
+3	1283	6892265580230232	build.ninja	e9aaae1fcefe0cbe
 11	1124	6890332636453970	CMakeFiles/untitled.dir/main.c.obj	21dca7c4b30dea01
 3	118	6890350901248846	CMakeFiles/untitled.dir/fibonacci.c.obj	7f546d5ce269e9fd
 2	100	6890346568046416	CMakeFiles/untitled.dir/buscaCaminho.c.obj	68c2d606bbb498de

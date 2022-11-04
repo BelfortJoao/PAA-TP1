@@ -88,22 +88,25 @@ void buscaCaminho(int M[N][N]){
 int Resolva(int  x,int y, int moves, int recursividade, int  sol[N2],int  M[N][N],int  xMove[4],int yMove[4]){
     int k, next_x, next_y;
     recursividade++;
-    moves++;
-    if (moves==N2){
+    moves+=2;
+    if ((int)moves/2==N2){
         return 1;
     }
     for (k = 0; k < 4; k++) {
         next_x = x + xMove[k];
         next_y = y + yMove[k];
-        if (casaSegura(next_x, next_y, sol)) {
-            sol[next_x][next_y] = movei;
-            if (Resolva()
+        if (casaSegura((int) moves / 2, M, next_x, next_y)) {
+            sol[moves - 1] = next_x;
+            sol[moves] = next_y;
+            if (Resolva(next_x, next_y, (int) moves / 2, recursividade, sol, M, xMove, yMove)
                 == 1)
                 return 1;
-            else
-                sol[next_x][next_y] = -1; // backtracking
+            else {
+                sol[moves - 1] = -1;
+                sol[moves] = -1;
+                moves--;
+            }
         }
     }
-
     return 0;
 }
