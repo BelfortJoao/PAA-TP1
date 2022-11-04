@@ -56,8 +56,8 @@ void printSolution(matriz matriz) {
 void buscaCaminho(matriz matriz){
     resetSol(matriz.sol)
     int x,y;
-    int xMove[4] = {0,1, 0, -1};
-    int yMove[4] = {1,0,-1, 0};
+    int xMove[4] = {0, 1, -1, 0};
+    int yMove[4] = {1, 0, 0, -1};
     int moves=0;
     int recursividade=0;
     for(int f = 0; f < mat.largura; f++) {
