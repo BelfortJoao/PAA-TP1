@@ -3,5 +3,6 @@ project(untitled C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(untitled main.c fibonacci.c buscaCaminho.c buscaCaminho.h fibonacci.h)
-add_executable(teste teste.c)
+add_compile_options(-lm)
+add_executable(untitled main.c matriz.c matriz.h fibonacci.c buscaCaminho.c buscaCaminho.h fibonacci.h)
+target_link_libraries(untitled m)

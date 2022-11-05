@@ -30,7 +30,7 @@ int testeDePasso(int passo, int numero) {
 //  int True/False: 1 se é uma casa valida dentro dos limites e regras do passo
 int casaSegura(int passo, Tmatriz mat, int x, int y) {
     if (coordValida(x, y, mat)){
-        return testeDePasso(passo, mat.matriz[x][y]);
+        return testeDePasso(passo, mat.matriz[y][x]);
     } else {
         return 0;
     }
@@ -42,7 +42,7 @@ int casaSegura(int passo, Tmatriz mat, int x, int y) {
 void printSolution(Tmatriz matriz) {
     for (int y = 0; y < matriz.altura * matriz.largura; y++) {
         if (matriz.sol[y][0] != -1) {
-            printf(" %d %d\n", matriz.sol[y][0], matriz.sol[y][1]);
+            printf(" %d %d\n", matriz.sol[y][0]+1, matriz.sol[y][1]+1);
         } else {
             break;
         }
@@ -54,30 +54,32 @@ int naoVisitado(int x, int y, Tmatriz matriz) {
         if (matriz.sol[i][0] == -1) {
             return 1;
         }
-        if (matriz.sol[i][0] == x && matriz.sol[i][1] == y) {
+        if (matriz.sol[i][0] == y && matriz.sol[i][1] == x) {
             return 0;
         }
     }
     return 1;
 }
 
-int resolva(int x, int y, int passos, int recursividade, Tmatriz* matriz, int xMove[4], int yMove[4]) {
-    recursividade++;
+int resolva(int x, int y, int passos, int* recursividade, Tmatriz* matriz, int xMove[4], int yMove[4]) {
+    *recursividade += 1;
+    passos++;
     if (casaSegura(passos, *matriz, x, y) && naoVisitado(x, y, *matriz)) {
-        matriz->sol[passos][0] = x;
-        matriz->sol[passos][1] = y;
+        matriz->sol[passos-1][0] = y;
+        matriz->sol[passos-1][1] = x;
         if (y == matriz->altura - 1) {
             return 1;
         }
         for (int i = 0; i < 4; i++) {
             int nextX = x + xMove[i];
             int nextY = y + yMove[i];
-            if (resolva(nextX, nextY, passos + 1, recursividade, matriz, xMove, yMove)) {
+            if (resolva(nextX, nextY, passos, recursividade, matriz, xMove, yMove)) {
                 return 1;
             }
         }
-        matriz->sol[passos][0] = -1;
-        matriz->sol[passos][1] = -1;
+        matriz->sol[passos-1][0] = -1;
+        matriz->sol[passos-1][1] = -1;
+        *recursividade -= 1;
         return 0;
     }
 }
@@ -88,12 +90,12 @@ int resolva(int x, int y, int passos, int recursividade, Tmatriz* matriz, int xM
 void buscaCaminho(Tmatriz* matriz){
     resetSol(matriz);
     int x,y;
-    int xMove[4] = {0, 1, -1, 0};
+    int xMove[4] = {0, -1, 1, 0};
     int yMove[4] = {1, 0, 0, -1};
     int passos = 0;
     int recursividade=0;
     for(int f = 0; f < matriz->largura; f++) {
-        int resolucao=resolva(f, 0, passos, recursividade, matriz, xMove, yMove);
+        int resolucao=resolva(f, 0, passos, &recursividade, matriz, xMove, yMove);
         if (resolucao == 1) {
             printSolution(*matriz);
             printf("\nQuantidade de recursões %d", recursividade);
