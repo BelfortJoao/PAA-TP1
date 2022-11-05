@@ -1,12 +1,10 @@
 //used to calculate things related to fibonacci
 
-#include <math.h>
 #include "fibonacci.h"
 
-#define VALORAUREO 1.618034
 
 
-//calcula o fibonacci com a formula fechada da possição enviada.
+//calcula o fibonacci com a formula fechada da posição enviada.
 //input:
 //	int posição:posição a ser buscada na serie de fibonacci.
 //output:
@@ -25,28 +23,43 @@ int fibonacci(int posicao)
 //	int position: posição do número na ordem da pesquisa.
 //output:
 //	int real_position: posição real na ordem de fibonacci convencional
-int getRealPossitionInFibonacci(int position)
-{
-    int return_index=0;
-    int x = position;
-    int index=0;
-    int index2=0;
-    int real_index=0;
 
-    while(1){
-        while(1){
-            if(index2>=index||real_index>=x){
-                return_index = index2;
-                index2 = 0;
-                break;
-            }
-            index2++;
-            real_index ++;
-        }
-        if(real_index>=x){
-            break;
-        }
-        index++;
+
+
+int getRealPositionInFibonacci(int position){
+    int j = position;
+    int cont = 0;
+    for (int i = 1; j > 0; i++){
+        j -= i;
+        cont += 1;
     }
-    return return_index;
+    int trueFib = cont + j;
+    return fibonacci(trueFib);
 }
+
+
+
+// {
+//     int return_index=0;
+//     int x = position;
+//     int index=0;
+//     int index2=0;
+//     int real_index=0;
+
+//     while(1){
+//         while(1){
+//             if(index2>=index||real_index>=x){
+//                 return_index = index2;
+//                 index2 = 0;
+//                 break;
+//             }
+//             index2++;
+//             real_index ++;
+//         }
+//         if(real_index>=x){
+//             break;
+//         }
+//         index++;
+//     }
+//     return return_index;
+// }
