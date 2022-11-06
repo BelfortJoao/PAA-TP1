@@ -15,7 +15,7 @@ int main(){
         int altura,  largura;
         FILE *pArquivo = NULL;
         char nomeArquivo[CHAR_MAX];
-
+        int analise = 0;
         switch (escolha) {
             default:
                 printf("Entrada invalida\n");
@@ -23,6 +23,8 @@ int main(){
             case 0:
                 exit(0);
             case 2:
+                printf("Modo de analise[1.Sim/2.Não]: ");
+                scanf("%d", &analise);
                 printf("\nFormatação:\n\n"
                        "Primeira linha: Y X.\n"
                        "Outras: representação das linhas da matriz da fazenda.\n"
@@ -34,10 +36,12 @@ int main(){
                         scanf("%d", &mat.matriz[i][j]);
                     }
                 }
-                buscaCaminho(&mat);
+                buscaCaminho(&mat, analise);
                 break;
 
             case 1:
+                printf("Modo de analise[1.Sim/2.Não]: ");
+                scanf("%d", &analise);
                 printf("Digite o nome do arquivo: \nOBS: O arquivo deve estar na pasta 'input'.\n");
                 scanf("%s", nomeArquivo);
                 char caminhoArquivo[strlen(PATH_ARQUIVO) + strlen(nomeArquivo) + 1];
@@ -61,7 +65,7 @@ int main(){
                 }
                 fclose(pArquivo);
                 pArquivo = NULL;
-                buscaCaminho(&mat);
+                buscaCaminho(&mat, analise);
                 break;
         }
     }

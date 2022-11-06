@@ -87,7 +87,7 @@ int resolva(int x, int y, int passos, int* recursividade, Tmatriz* matriz, int x
 //Função principal de busca de caminhos na matriz
 //input:
 //  int matriz[N][N]: matriz original que representa a fazenda .
-void buscaCaminho(Tmatriz* matriz){
+void buscaCaminho(Tmatriz* matriz,int analise){
     resetSol(matriz);
     int x,y;
     int xMove[4] = {0, -1, 1, 0};
@@ -98,7 +98,9 @@ void buscaCaminho(Tmatriz* matriz){
         int resolucao=resolva(f, 0, passos, &recursividade, matriz, xMove, yMove);
         if (resolucao == 1) {
             printSolution(*matriz);
+            if(analise==1){
             printf("\nQuantidade de recursões %d", recursividade);
+        }
             return;
         }
     }
