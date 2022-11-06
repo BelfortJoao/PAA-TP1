@@ -1,4 +1,0 @@
-/home/guto7k/Documentos/cdc-ufv/2022.2/paa/TP1/PAA-TP1/src/cmake-build-debug/CMakeFiles/untitled.dir
-/home/guto7k/Documentos/cdc-ufv/2022.2/paa/TP1/PAA-TP1/src/cmake-build-debug/CMakeFiles/teste.dir
-/home/guto7k/Documentos/cdc-ufv/2022.2/paa/TP1/PAA-TP1/src/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/guto7k/Documentos/cdc-ufv/2022.2/paa/TP1/PAA-TP1/src/cmake-build-debug/CMakeFiles/rebuild_cache.dir

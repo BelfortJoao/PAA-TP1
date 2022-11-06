@@ -1,11 +1,7 @@
-//
-// Created by belfo on 01/11/2022.
-//
+#include <math.h>
+#include <stdio.h>
 
-#ifndef UNTITLED_FIBONACCI_H
-#define UNTITLED_FIBONACCI_H
+#define VALORAUREO 1.618034
 
 int fibonacci(int posicao);
-int getRealPossitionInFibonacci(int position);
-
-#endif //UNTITLED_FIBONACCI_H
+int getRealPositionInFibonacci(int position);

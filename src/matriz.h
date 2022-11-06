@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "fibonacci.h"
 
-typedef struct matriz{
+typedef struct Tmatriz{
     int** matriz;
-    int* sol;
-    int largura, altura;
-}matriz;
+    int** sol;
+    int largura;
+    int altura;
+}Tmatriz;
 
-matriz inicializaMatriz(int largura, int altura);
-int coordValida(int x, int y, matriz mat);
-void resetSol(matriz* mat);
+void inicializaMatriz(Tmatriz* mat, int altura, int largura);
+int coordValida(int x, int y, Tmatriz mat);
+void resetSol(Tmatriz* mat);
