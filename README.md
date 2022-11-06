@@ -1,6 +1,7 @@
-# Lista-Linear-OS
-> Trabalho Prático 01 – Algoritimos e Estruturas de Dados 1 – Trios
-Descrição: implementação de um Tipo Abstrato de Dados Lista Linear, para que um sistema operacional faça gerência de processos ativos, e os seus respectivos testes, juntos de um gerador de arquivos de teste, e uma avaliação de desempenho.
+# Fazenda de Fernando
+> Trabalho Prático 01 – Projeto e Analise de Algoritimos – Trios
+Descrição: Projetar um algoritmo com backtracking para encontrar um caminho, seguindo a sequencia de fibonacci em uma matriz, neste contexto, implementá-lo em C e documentá-lo, conforme as especificações dadas.
+
 # Colaboradores
 ## João Victor
 Nome: João Victor Graciano Belfort de Andrade
