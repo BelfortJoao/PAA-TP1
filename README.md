@@ -1,6 +1,8 @@
 # Fazenda de Fernando
 > Trabalho Prático 01 – Projeto e Analise de Algoritimos – Trios
-Descrição: Projetar um algoritmo com backtracking para encontrar um caminho, seguindo a sequencia de fibonacci em uma matriz, neste contexto, implementá-lo em C e documentá-lo, conforme as especificações dadas.
+
+## Descrição:
+Projetar um algoritmo com backtracking para encontrar um caminho, seguindo a sequencia de fibonacci em uma matriz, neste contexto, implementá-lo em C e documentá-lo, conforme as especificações dadas.
 
 # Colaboradores
 ## João Victor
