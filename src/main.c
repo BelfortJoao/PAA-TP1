@@ -1,6 +1,7 @@
 #include "buscaCaminho.h"
 #include <string.h>
 #include <limits.h>
+#include "criaTeste.h"
 #define PATH_ARQUIVO "./input/"
 int main(){
     Tmatriz mat;
@@ -22,8 +23,11 @@ int main(){
                 printf("Entrada invalida\n");
                    break;
             case 3:
-                teste = criaTeste();
-                printaTeste(teste);
+                int idFile;
+                printf("Insira um número para identificar o arquivo: ");
+                scanf("%d", &idFile);
+                criaTxt(idFile);
+
                 break;
 
             case 0:
