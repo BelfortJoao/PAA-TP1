@@ -1,7 +1,3 @@
-//
-// Created by belfort on 11/13/22.
-//
-
 #ifndef SRC_CRIATESTE_H
 #define SRC_CRIATESTE_H
     int ** criaTeste();

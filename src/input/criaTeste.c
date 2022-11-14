@@ -11,12 +11,7 @@ int ** criaTeste(int ** matriz, int altura, int largura){
     int matriz = (int**) malloc(sizeof(int*)*altura)
 
     for (int i = 0; i < altura; i++){
-        mat->matriz[i] = (int*) malloc(sizeof(int)*largura);
-    }
-
-    mat->sol = (int**) malloc(sizeof(int*)*altura*largura);
-    for (int i = 0; i < altura*largura; i++){
-        mat->sol[i] = (int*) malloc(sizeof(int)*2);
+        matriz[i] = (int*) malloc(sizeof(int)*largura);
     }
 
     for (int i = 0; i < altura; ++i) {
