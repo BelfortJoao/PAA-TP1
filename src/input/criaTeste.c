@@ -8,7 +8,7 @@
 
 
 int ** criaTeste(int ** matriz, int altura, int largura){
-    int matriz = (int**) malloc(sizeof(int*)*altura)
+    int matriz = (int**) malloc(sizeof(int*)*altura);
 
     for (int i = 0; i < altura; i++){
         matriz[i] = (int*) malloc(sizeof(int)*largura);
@@ -22,7 +22,7 @@ int ** criaTeste(int ** matriz, int altura, int largura){
 }
 
 void criaTxt(int ** matriz, int numeroArquivo){
-    char strNumeroArquivo
+    char strNumeroArquivo;
     strcpy(caminhoArquivo, NOME_ARQUIVO);
     itoa(numeroArquivo, strNumeroArquivo, 10);
     strcat(caminhoArquivo, strNumeroArquivo);
