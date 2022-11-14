@@ -10,6 +10,7 @@ int main(){
                "\n0.Sair\n"
                "1.Para ler txt representando fazenda.\n"
                "2.Para digitar a representação da fazenda.\n"
+               "3.criar uma nova fazenda aleatoriamente."
                ":");
         scanf("%d", &escolha);
         int altura,  largura;
@@ -20,6 +21,11 @@ int main(){
             default:
                 printf("Entrada invalida\n");
                    break;
+            case 3:
+                teste = criaTeste();
+                printaTeste(teste);
+                break;
+
             case 0:
                 exit(0);
             case 2:
